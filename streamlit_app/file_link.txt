@@ -1,2 +1,2 @@
-Download file from this URL before `stremlit run app.py`:
+Download file from this URL before `streamlit run app.py`:
 https://drive.google.com/drive/folders/1E29Ea7vGHwyeQUWcUnG5KFZnBoBxExue
