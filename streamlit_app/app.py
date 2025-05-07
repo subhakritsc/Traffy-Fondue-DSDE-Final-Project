@@ -10,15 +10,12 @@ st.set_page_config(page_title="ภาพรวมปัญหาในกทม"
 # ------------------------- LOADING DATA -----------------------------
 @st.cache_data
 def load_data():
-    file_url_1 = "https://drive.google.com/uc?id=1p0C_DXZVBnJGiP4lI3ZQL4qTOzeNYaq_"
-    file_url_2 = "https://drive.google.com/uc?id=18n8lgxeK1UjDl2SuIyfrbRYlkmXgdaqw"
-    
     # 1. map and graph visualization
-    df = pd.read_csv(file_url_1)
+    df = pd.read_csv("cluster_data.csv")
     df["cluster_id"] = df["cluster_id"].astype(str)
 
     # 2. example of each cluster_id
-    report_df = pd.read_csv("file_url_2")
+    report_df = pd.read_csv("example_comment.csv")
     report_df["cluster"] = report_df["cluster"].astype(str)
     return df, report_df
 
