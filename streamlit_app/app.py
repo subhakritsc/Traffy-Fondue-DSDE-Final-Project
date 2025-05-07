@@ -7,6 +7,7 @@ import random
 
 st.set_page_config(page_title="ภาพรวมปัญหาในกทม", page_icon="🚨", layout="wide")
 
+
 # ------------------------- LOADING DATA -----------------------------
 @st.cache_data
 def load_data():
@@ -18,6 +19,7 @@ def load_data():
     report_df = pd.read_csv("example_comment.csv")
     report_df["cluster"] = report_df["cluster"].astype(str)
     return df, report_df
+
 
 df, report_df = load_data()
 # Get all unique zones and organizations
@@ -127,7 +129,7 @@ if page == "🗺️ แผนที่":
     selected_org = st.sidebar.selectbox(
         "**กรองด้วยหน่วยงาน**", ["-"] + all_organizations[::-1], index=0
     )
-    
+
     if viz_mode != "Heatmap":
         limit_num = st.sidebar.slider(
             "**จำนวนการเกิดปัญหาขั้นต่่ำ**", min_value=1, max_value=20, value=10, step=1
@@ -166,9 +168,9 @@ if page == "🗺️ แผนที่":
         filtered_df = filtered_df[
             filtered_df["organization"].str.contains(selected_org)
         ]
-    filtered_df = filtered_df[filtered_df["num_times"] >= limit_num]
-    
+
     if viz_mode != "Heatmap":
+        filtered_df = filtered_df[filtered_df["num_times"] >= limit_num]
         if show_color == "โซน":
             # Create color mapping
             zone_colors = create_zone_colors(all_zones)
@@ -191,7 +193,7 @@ if page == "🗺️ แผนที่":
         center_long = filtered_df["long"].mean()
     else:
         center_lat, center_long = 13.75, 100.5  # Default to Bangkok
-        
+
     # Display the map
     st.write("")
     map_col, space, legend_col = st.columns([1.15, 0.02, 0.43])
