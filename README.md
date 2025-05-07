@@ -24,7 +24,7 @@ A "new problem occurrence" is defined as:
 
    ```bash
    git clone https://github.com/subhakritsc/Traffy-Fondue-DSDE-Final-Project.git
-   cd traffy-fondue-dsde-final-project/streamlit_app
+   cd Traffy-Fondue-DSDE-Final-Project/streamlit_app
 
 2. **Install dependencies:**
 
