@@ -40,5 +40,6 @@ A "new problem occurrence" is defined as:
 
    ```bash
    streamlit run app.py
+   ```
 
    Visit `http://localhost:8501` to view the app.
