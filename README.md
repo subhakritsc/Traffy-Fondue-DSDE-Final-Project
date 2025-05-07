@@ -10,6 +10,9 @@ Our core idea is to **cluster problems** based on their **location** and **type*
 
 ### 📌 Problem Definition
 
-A "new problem occurrence" is defined as: A **new report** of the same **problem type** at the same **location**,  
+A "new problem occurrence" is defined as:
+
+- A **new report** of the same **problem type** at the same **location**,  
+- **After** the original problem has been marked as **resolved**.
 
 > 🔁 Multiple reports **before** the issue is resolved are counted as **one** problem, to prevent duplication from citizen follow-ups.
