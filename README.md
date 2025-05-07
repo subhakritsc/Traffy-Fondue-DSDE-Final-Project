@@ -16,3 +16,29 @@ A "new problem occurrence" is defined as:
 - **After** the original problem has been marked as **resolved**.
 
 > 🔁 Multiple reports **before** the issue is resolved are counted as **one** problem, to prevent duplication from citizen follow-ups.
+
+
+### 🚀 How to Run
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone <repository-url>
+   cd traffy-fondue-dsde-final-project/streamlit_app
+
+2. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+
+3. **Set up data files:**
+
+   - Download the necessary CSV files from the Google Drive links provided in `file_link.txt`.
+   - Ensure the files are in the correct directory.
+  
+4. **Run the app:**
+
+   ```bash
+   streamlit run app.py
+
+   Visit `http://localhost:8501` to view the app.
