@@ -16,7 +16,7 @@ def load_data():
     df["cluster_id"] = df["cluster_id"].astype(str)
 
     # 2. example of each cluster_id
-    report_df = pd.read_csv("example_comment2.csv")
+    report_df = pd.read_csv("example_comment.csv")
     report_df["cluster"] = report_df["cluster"].astype(str)
     return df, report_df
 
@@ -462,11 +462,6 @@ elif page == "📊 กราฟและตาราง":
             .sort_values(by="num_times", ascending=False)
             .head(top_n)
             .reset_index()
-        )
-
-        # Convert cluster_id to string for labeling (Remove Later)
-        top_clusters["cluster_id"] = top_clusters["cluster_id"].apply(
-            lambda x: f"หมายเลข {x}"
         )
 
         # Plot with cluster_id on x and num_times on y
