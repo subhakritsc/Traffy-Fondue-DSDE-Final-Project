@@ -33,12 +33,15 @@ A "new problem occurrence" is defined as:
 
 3. **Set up data files:**
 
-   - Download the necessary CSV files from the Google Drive links provided in `file_link.txt`.
-   - Ensure the files are in the correct directory.
+   Run the following commands to download the necessary CSV files:
+   ```bash
+   gdown "https://drive.google.com/uc?id=1YQKG7PWSw9H8ONYXjORrya5SGreIeHme"
+   gdown "https://drive.google.com/uc?id=15YG5Uq_Jd_2foD93b2VcqcP2sq2Gk2PM"
   
 4. **Run the app:**
 
    ```bash
    streamlit run app.py
+   ```
 
    Visit `http://localhost:8501` to view the app.
