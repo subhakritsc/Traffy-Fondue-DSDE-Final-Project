@@ -16,7 +16,7 @@ def load_data():
     df["cluster_id"] = df["cluster_id"].astype(str)
 
     # 2. example of each cluster_id
-    report_df = pd.read_csv("example_comment.csv")
+    report_df = pd.read_csv("example_comment2.csv")
     report_df["cluster"] = report_df["cluster"].astype(str)
     return df, report_df
 
@@ -526,8 +526,10 @@ elif page == "🗒️ รายละเอียดปัญหา":
     col1, spacer1, col2 = st.columns([0.3, 0.1, 1])
 
     with col1:
-        clusters = sorted(report_df["cluster"].astype(float).unique())
-        clusters = [str(c) for c in clusters]
+        clusters = sorted(
+            report_df["cluster"].unique(),
+            key=lambda x: (int(x.split("_")[0]), int(x.split("_")[1]))
+        )
         selected_cluster = st.selectbox("**เลือกหมายเลขของปัญหา**", clusters)
         max_comments = len(report_df[report_df["cluster"] == selected_cluster])
         st.write("")
